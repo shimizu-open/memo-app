@@ -19,3 +19,6 @@ Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->nam
 // リマインダー（1対1）
 Route::put('/memos/{memo}/reminder', [ReminderController::class, 'update'])->name('memos.reminder.update');
 Route::delete('/memos/{memo}/reminder', [ReminderController::class, 'destroy'])->name('memos.reminder.destroy');
+
+// どのサーバーが返事をしたか（冗長化の実験用。文字だけを返す）
+Route::get('/server', fn () => response(config('server.label')."\n")->header('Content-Type', 'text/plain; charset=UTF-8'));

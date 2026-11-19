@@ -27,6 +27,7 @@
     nav[role="navigation"] > div:first-child { display: none; }
     nav[role="navigation"] svg { width: 20px; height: 20px; vertical-align: middle; }
     nav[role="navigation"] a, nav[role="navigation"] span[aria-current] > span, nav[role="navigation"] span[aria-disabled] > span { display: inline-block; padding: 4px 10px; }
+    footer { margin-top: 32px; border-top: 1px solid #eee; padding-top: 8px; color: #6b7280; font-size: 12px; }
   </style>
 </head>
 <body>
@@ -42,5 +43,8 @@
   <main>
     @yield('content')
   </main>
+
+  {{-- 冗長化の実験用：このページを、どのサーバーが返したか --}}
+  <footer>このページを返したサーバー：{{ config('server.label') }}</footer>
 </body>
 </html>
